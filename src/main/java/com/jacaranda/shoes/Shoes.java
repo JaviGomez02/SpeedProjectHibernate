@@ -25,13 +25,15 @@ public class Shoes {
 	private LocalDate releaseDate;
 	@Column (name="STOCK")
 	private boolean stock;
+	@Column (name="IDCATALOGO_ZAP")
+	private int idCatalogo;
 	
 	public Shoes() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Shoes(int idShoes, String name, double price, int sizes, LocalDate releaseDate, boolean stock) {
+	public Shoes(int idShoes, String name, double price, int sizes, LocalDate releaseDate, boolean stock, int idCatalogo) {
 		super();
 		this.idShoes = idShoes;
 		this.name = name;
@@ -39,6 +41,7 @@ public class Shoes {
 		this.sizes = sizes;
 		this.releaseDate = releaseDate;
 		this.stock = stock;
+		this.idCatalogo=idCatalogo;
 	}
 
 	public int getIdShoes() {
@@ -51,6 +54,14 @@ public class Shoes {
 
 	public String getName() {
 		return name;
+	}
+
+	public int getIdCatalogo() {
+		return idCatalogo;
+	}
+
+	public void setIdCatalogo(int idCatalogo) {
+		this.idCatalogo = idCatalogo;
 	}
 
 	public void setName(String name) {
@@ -109,9 +120,9 @@ public class Shoes {
 	@Override
 	public String toString() {
 		return "Shoes [idShoes=" + idShoes + ", name=" + name + ", price=" + price + ", sizes=" + sizes
-				+ ", releaseDate=" + releaseDate + ", stock=" + stock + "]";
+				+ ", releaseDate=" + releaseDate + ", stock=" + stock + ", idCatalogo=" + idCatalogo + "]";
 	}
-	
+
 	
 	
 	

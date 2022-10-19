@@ -1,3 +1,5 @@
+<%@page import="com.jacaranda.catalogo.Catalogo"%>
+<%@page import="com.jacaranda.dao.CRUDCatalogo"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.util.Date"%>
 <%@page import="com.jacaranda.shoes.Shoes"%>
@@ -13,10 +15,11 @@
 <body>
 <%
 	CRUDShoe c=new CRUDShoe();
-	out.print(c.readShoe(3));
-	Shoes s=new Shoes(2,"Nike air force 1",120.99,43,LocalDate.of(2002, 4, 3),true);
-	c.add(s);
-	
+	CRUDCatalogo cr=new CRUDCatalogo();
+	Catalogo ca = new Catalogo(6, "El niño", "Es la mejor marca");
+/* 	cr.addCatalogo(ca);
+ */	cr.deleteCatalogo(ca);
+	/* out.print(cr.readCatalogo(1)); */
 %>
 
 </body>
