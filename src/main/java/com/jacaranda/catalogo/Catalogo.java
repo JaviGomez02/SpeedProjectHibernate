@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import com.jacaranda.shoes.Shoes;
 
 @Entity (name="CATALOGO")
-public class Catalogo implements java.io.Serializable{
+public class Catalogo{
 	
 	@Id
 	@Column (name="ID_CATALOGO")
@@ -22,7 +22,6 @@ public class Catalogo implements java.io.Serializable{
 	private String description;
 	@OneToMany(mappedBy="idCatalogo")
 	private Set<Shoes> shoesList;
-	
 	
 	public Catalogo() {
 		super();
@@ -71,6 +70,7 @@ public class Catalogo implements java.io.Serializable{
 	public Set<Shoes> getShoesList() {
 		return shoesList;
 	}
+	
 
 
 	public void setShoesList(Set<Shoes> shoesList) {

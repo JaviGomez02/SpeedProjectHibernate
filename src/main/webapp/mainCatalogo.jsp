@@ -1,18 +1,17 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.jacaranda.dao.CRUDCatalogo"%>
+<%@page import="com.jacaranda.catalogo.Catalogo"%>
 <%@page import="java.util.HashSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@page import="com.jacaranda.shoes.Shoes"%>
-<%@page import="java.util.Set"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
+
+  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<jsp:useBean id="Catalogo" class="com.jacaranda.catalogo.Catalogo"></jsp:useBean>
 <jsp:useBean id="CatalogoBD" class="com.jacaranda.dao.CRUDCatalogo"></jsp:useBean>
-
 
 <title>Speed Main</title>
 <link href="style.css" rel="stylesheet"> 
@@ -31,8 +30,6 @@ else{
 }
 %>
 
-
-
 <header id="main-header">
 	<a id="logo-header" href="mainCatalogo.jsp"><img src="final_75x75.png"></a>
 	<a id="title" href="mainCatalogo.jsp">SPEED</a>
@@ -48,17 +45,11 @@ else{
 		</ul>
 	</nav>
 </header>
-<%int idCatalogo=Integer.parseInt(request.getParameter("idCatalogo")); 
-Catalogo=CatalogoBD.readCatalogo(idCatalogo);
-Set<Shoes>listaZapatos=Catalogo.getShoesList();
-%>
+
 <div id="cuerpoMain">
 	<form action="main.jsp" method="get">
 		<div id="tablaInfo">
-			<h1><a href="annadirZap.jsp?idCatalogo=<%=idCatalogo%>" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Producto</a></h1>
-			
-			<%out.print(request.getParameter("id")); %>
-			
+			<h1><a href="annadirCatalogo.jsp" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Producto</a></h1>
 			<table id="tabla" border="1">
 				<tr id="titulos">
 					<td class="tdId">
@@ -68,50 +59,37 @@ Set<Shoes>listaZapatos=Catalogo.getShoesList();
 						<h2>NAME</h2>
 					</td>
 					<td class="tdPrice">
-						<h2>PRICE</h2>
+						<h2>DESCRIPTION</h2>
 					</td>
-					<td class="tdSize">
-						<h2>SIZE</h2>
-					</td>
-					<td class="tdRelease">
-						<h2>RELEASE DATE</h2>
-					</td>
-					<td class="tdStock">
-						<h2>STOCK</h2>
+					<td id="buttonIcon">
+						<h2>Ir</h2>
 					</td>
 					<td id="buttonIcon">
 						<h2>BOTONES</h2>
 					</td>
 				</tr>
 				<%
-					
-					for(Shoes s:listaZapatos){
-						
-					
+				List<Catalogo> lista=new ArrayList<>();
+				lista=CatalogoBD.loadList();
+					for(Catalogo ca: lista){
 				%> 
 					<tr>
 						<td>
-							<%=s.getIdShoes() %>
-						</td>
-						
-						<td>
-							<%=s.getName() %>
+							<%=ca.getId() %>
 						</td>
 						<td>
-							<%=s.getPrice() %>
+							<%=ca.getName() %>
 						</td>
 						<td>
-							<%=s.getSizes() %>
+							<%=ca.getDescription() %>
 						</td>
 						<td>
-							<%=s.getReleaseDate() %>
+							<a href="main.jsp?idCatalogo=<%=ca.getId()%>">Ir a los zapatos</a>
 						</td>
 						<td>
-							<%=s.isStock() %>
-						</td>
-						<td>
-							<a href="borrarCatalogo.jsp?id=<%=s.getIdShoes()%>">Borrar</a><br>
-							<a href="editarCatalogo.jsp?id=<%=s.getIdShoes()%>">Editar</a><br>
+							<a href="borrarCatalogo.jsp?idCatalogo=<%=ca.getId()%>">Borrar</a><br>
+							<a href="editarCatalogo.jsp?idCatalogo=<%=ca.getId()%>">Editar</a><br>
+							
 						</td>
 					</tr>
 				<%}%>

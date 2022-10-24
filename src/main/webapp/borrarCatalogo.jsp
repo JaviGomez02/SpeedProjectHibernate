@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="com.jacaranda.dao.Dao"%>
-<%@page import="com.jacaranda.shoes.Shoes"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<jsp:useBean id="Catalogo" class="com.jacaranda.catalogo.Catalogo"></jsp:useBean>
+<jsp:useBean id="CatalogoBD" class="com.jacaranda.dao.CRUDCatalogo"></jsp:useBean>
 <title>Speed: Borrar</title>
 <link href="style.css" rel="stylesheet" >
 </head>
@@ -32,13 +32,12 @@
             <div id="loginBorrar">
                     <br>
                     <%
-                    Dao d=new Dao();
-                                        Shoes shoe=d.findShoe(Integer.parseInt(request.getParameter("id")));
-                                        String shoeName=shoe.getName();
+                    	int id=Integer.parseInt(request.getParameter("idCatalogo"));
+                    	Catalogo=CatalogoBD.readCatalogo(id);
                     %>
-                    	<h1>¿Seguro que quieres borrar el producto <%=shoeName %>?</h1><br>
-                    	<a href="borrar.jsp?id=<%=request.getParameter("id")%>" class="joinCancelar" style="background: #333; margin-bottom: 1em;"><h2>Confirmar</h2></a>
-                        <a href="main.jsp" class="joinCancelar"><h2>Cancelar</h2></a>
+                    	<h1>¿Seguro que quieres borrar el catalogo <%=Catalogo.getName() %>?</h1><br>
+                    	<a href="borrarCatalogoExec.jsp?id=<%=request.getParameter("idCatalogo")%>" class="joinCancelar" style="background: #333; margin-bottom: 1em;"><h2>Confirmar</h2></a>
+                        <a href="mainCatalogo.jsp" class="joinCancelar"><h2>Cancelar</h2></a>
                     <br>
      
             </div>
