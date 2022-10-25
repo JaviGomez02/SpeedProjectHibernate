@@ -38,13 +38,13 @@ else{
 	<a id="title" href="mainCatalogo.jsp">SPEED</a>
 
 	<nav>
-		<ul>
+		<ul>	
+			<li><a href="aboutAs.html">Acerca de</a></li>
+			<li><a href="contactUs.html">Contacto</a></li>	
+			<li><a href="index.jsp">Cerrar sesion</a></li>
 			<li><%
 			out.print(bienvenida);
 			%></li>
-			<li><a href="index.jsp">Cerrar sesion</a></li>
-			<li><a href="aboutAs.html">Acerca de</a></li>
-			<li><a href="contactUs.html">Contacto</a></li>
 		</ul>
 	</nav>
 </header>
@@ -55,11 +55,11 @@ Set<Shoes>listaZapatos=Catalogo.getShoesList();
 <div id="cuerpoMain">
 	<form action="main.jsp" method="get">
 		<div id="tablaInfo">
-			<h1><a href="annadirZap.jsp?idCatalogo=<%=idCatalogo%>" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Producto</a></h1>
+			<h1><a href="annadirZap.jsp?idCatalogo=<%=idCatalogo%>&error=0" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Producto</a></h1>
 			
-			<%out.print(request.getParameter("id")); %>
+		
 			
-			<table id="tabla" border="1">
+			<table class="tabla" border="1" >
 				<tr id="titulos">
 					<td class="tdId">
 						<h2>ID</h2>
@@ -110,8 +110,8 @@ Set<Shoes>listaZapatos=Catalogo.getShoesList();
 							<%=s.isStock() %>
 						</td>
 						<td>
-							<a href="borrarCatalogo.jsp?id=<%=s.getIdShoes()%>">Borrar</a><br>
-							<a href="editarCatalogo.jsp?id=<%=s.getIdShoes()%>">Editar</a><br>
+							<a href="editarZap.jsp?idZap=<%=s.getIdShoes()%>"><img src="https://cdn-icons-png.flaticon.com/512/3817/3817309.png" width = "28" height = "28"></a>
+							<a href="borrarZap.jsp?idZap=<%=s.getIdShoes()%>"><img src="https://cdn-icons-png.flaticon.com/512/4315/4315482.png" width = "26" height = "26"></a><br>
 						</td>
 					</tr>
 				<%}%>

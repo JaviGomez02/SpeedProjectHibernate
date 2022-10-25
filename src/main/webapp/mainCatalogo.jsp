@@ -49,7 +49,7 @@ else{
 <div id="cuerpoMain">
 	<form action="main.jsp" method="get">
 		<div id="tablaInfo">
-			<h1><a href="annadirCatalogo.jsp" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Producto</a></h1>
+			<h1><a href="annadirCatalogo.jsp?error=0" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Producto</a></h1>
 			<table id="tabla" border="1">
 				<tr id="titulos">
 					<td class="tdId">
@@ -84,11 +84,11 @@ else{
 							<%=ca.getDescription() %>
 						</td>
 						<td>
-							<a href="main.jsp?idCatalogo=<%=ca.getId()%>">Ir a los zapatos</a>
+							<a href="main.jsp?idCatalogo=<%=ca.getId()%>"><input type="button" value="ir"></a>
 						</td>
 						<td>
-							<a href="borrarCatalogo.jsp?idCatalogo=<%=ca.getId()%>">Borrar</a><br>
-							<a href="editarCatalogo.jsp?idCatalogo=<%=ca.getId()%>">Editar</a><br>
+							<a href="borrarCatalogo.jsp?idCatalogo=<%=ca.getId()%>"><img src="https://cdn-icons-png.flaticon.com/512/4315/4315482.png" width = "26" height = "26"></a>
+							<a href="editarCatalogo.jsp?idCatalogo=<%=ca.getId()%>"><img src="https://cdn-icons-png.flaticon.com/512/3817/3817309.png" width = "28" height = "28"></a><br>
 							
 						</td>
 					</tr>

@@ -208,7 +208,7 @@ size: 0.2em;
 	
 }
 
-/* .tdId{
+.tdId{
 	width: 10em;
 }
 
@@ -230,10 +230,10 @@ size: 0.2em;
 
 .tdName{
 	width: 20em;
-} */
+}
 
 
-/* #tabla{
+.tabla{
 	width:98.5%;
 	width:50%;
 	height: 15em;
@@ -248,7 +248,7 @@ size: 0.2em;
 	table-layout: fixed
 	
 	
-} */
+} 
 
 #cuerpoMain {
     background-color: #f1f2f5;
