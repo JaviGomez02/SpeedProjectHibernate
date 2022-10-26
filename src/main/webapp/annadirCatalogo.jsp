@@ -11,6 +11,18 @@
 <link href="style.css" rel="stylesheet" >
 </head>
 <body>
+<%
+String bienvenida="";
+HttpSession sesion=request.getSession();
+String isSesion = (String) sesion.getAttribute("login");
+String userSesion= (String) sesion.getAttribute("usuario");
+if(isSesion != null && userSesion!=null && isSesion.equals("True")){
+	bienvenida=("Sesion: "+userSesion);
+}
+else{
+%> <jsp:forward page="errorPage.html"></jsp:forward> <%
+}
+%>
 <header id="main-header">
 		
 		<a id="logo-header" href="mainCatalogo.jsp"><img src="final_75x75.png"></a>
@@ -21,6 +33,9 @@
                 
 				<li><a href="mainCatalogo.jsp">Inicio</a></li>
 				<li><a href="index.jsp">Cerrar sesion</a>
+			<li><%
+			out.print(bienvenida);
+			%></li>
 			</ul>
 		</nav>
 
@@ -32,14 +47,14 @@
             <div id="loginAnnadir">
                     <br>
                     	<%int error=Integer.parseInt(request.getParameter("error")); %>
-                    	ID<br> <input type="number" class="annadirOrdenar" name="Id" placeholder="Id" required><br><br>
+                    	ID<br> <input type="number" class="annadirOrdenar" name="Id" placeholder="Id" required max="99999"><br><br>
 						<% if (error==1){
 							%><small>Este ID ya existe</small><br><%
 						}
 						
 						%>
-                        Name <input type="text" class="annadirOrdenar" name="name" placeholder="Name" required><br><br>
-                        Description <textarea  class="annadirOrdenar" name="descripcion" placeholder="Insert a description" min="1" required></textarea><br><br><br>
+                        Name <input type="text" class="annadirOrdenar" name="name" placeholder="Name" required minlength="1" maxlength="50"><br><br>
+                        Description <textarea  class="annadirOrdenar" name="descripcion" placeholder="Insert a description" minlength="1" maxlength="150" required></textarea><br><br><br>
                         <button type="submit" name="boton" value="Guardar" class="join"><h2>Guardar</h2></button><br><br>
                         <a href="mainCatalogo.jsp" class="joinCancelar"><h2>Cancelar</h2></a>
                     <br>

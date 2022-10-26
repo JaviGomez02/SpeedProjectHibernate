@@ -11,6 +11,18 @@
  <link href="style.css" rel="stylesheet" >
 </head>
 <body>
+<%
+String bienvenida="";
+HttpSession sesion=request.getSession();
+String isSesion = (String) sesion.getAttribute("login");
+String userSesion= (String) sesion.getAttribute("usuario");
+if(isSesion != null && userSesion!=null && isSesion.equals("True")){
+	bienvenida=("Sesion: "+userSesion);
+}
+else{
+%> <jsp:forward page="errorPage.html"></jsp:forward> <%
+}
+%>
 <header id="main-header">
 		
 		<a id="logo-header" href="mainCatalogo.jsp"><img src="final_75x75.png"></a>
@@ -18,9 +30,10 @@
 
 		<nav>
 			<ul>
-                
-				<li><a href="mainCatalogo.jsp">Inicio</a></li>
 				<li><a href="index.jsp">Cerrar sesion</a>
+				<li><%
+			out.print(bienvenida);
+			%></li>
 			</ul>
 		</nav>
 
@@ -37,11 +50,11 @@
             <div id="loginEditar">
                     <br>
                     <div id="introducir">
-                        Name: <input type="text" class="annadirOrdenar" name="name" value="<%=Catalogo.getName() %>"required >
+                        Name: <input type="text" class="annadirOrdenar" name="name" value="<%=Catalogo.getName() %>"required minlength="1" maxlength="50">
                     </div><br>
                     
                     <div id ="introducir"><!-- CAMBIAR EN EL CSS EL TAMAÑO--> 
-                        Description: <textarea class="annadirOrdenar" rows="4" name="descrip" maxlength="150" required><%=Catalogo.getDescription() %></textarea>
+                        Description: <textarea class="annadirOrdenar" rows="4" name="descrip"  minlegth="1" maxlength="150" required><%=Catalogo.getDescription() %></textarea>
                     </div><br>
                     
                     <div id ="introducir">

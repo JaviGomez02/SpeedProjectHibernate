@@ -2,9 +2,17 @@ package com.jacaranda.users;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity (name="USUARIO")
+
 public class Users {
-	
+	@Id
+	@Column (name="USERNAME")
 	private String userName;
+	@Column (name="PASSWORDD")
 	private String passWord;
 	
 	
@@ -13,6 +21,16 @@ public class Users {
 		this.userName = userName;
 		this.passWord = passWord;
 	}
+	
+	
+
+
+	public Users() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 
 	public String getUserName() {
@@ -51,6 +69,12 @@ public class Users {
 			return false;
 		Users other = (Users) obj;
 		return Objects.equals(userName, other.userName);
+	}
+
+
+	@Override
+	public String toString() {
+		return "Users [userName=" + userName + ", passWord=" + passWord + "]";
 	}
 	
 	

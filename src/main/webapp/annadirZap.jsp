@@ -9,6 +9,18 @@
 <link href="style.css" rel="stylesheet" >
 </head>
 <body>
+<%
+String bienvenida="";
+HttpSession sesion=request.getSession();
+String isSesion = (String) sesion.getAttribute("login");
+String userSesion= (String) sesion.getAttribute("usuario");
+if(isSesion != null && userSesion!=null && isSesion.equals("True")){
+	bienvenida=("Sesion: "+userSesion);
+}
+else{
+%> <jsp:forward page="errorPage.html"></jsp:forward> <%
+}
+%>
 <header id="main-header">
 		
 		<a id="logo-header" href="main.jsp?idCatalogo=<%=request.getParameter("idCatalogo")%>"><img src="final_75x75.png"></a>
@@ -19,6 +31,9 @@
                 
 				<li><a href="main.jsp?idCatalogo=<%=request.getParameter("idCatalogo")%>">Inicio</a></li>
 				<li><a href="index.jsp">Cerrar sesion</a>
+				<li><%
+			out.print(bienvenida);
+			%></li>
 			</ul>
 		</nav>
 
@@ -31,7 +46,7 @@
             <div id="loginAnnadir">
                     <br>
                     	<%int error=Integer.parseInt(request.getParameter("error")); %>
-                    	Id<br><input type="text" class="annadirOrdenar" name="Id" placeholder="Id" required>
+                    	Id<br><input type="number" class="annadirOrdenar" name="Id" placeholder="Id" required min="1" max="99999">
 						<% if (error==1){
 							%><small>Este ID ya existe</small><br><%
 						}
@@ -39,8 +54,8 @@
 						%>
                     	
                     	
-                        <br><br>Name<br><input type="text" class="annadirOrdenar" name="name" placeholder="Name" required>
-                        <br><br>Price<br><input type="number" step="any" class="annadirOrdenar" name="price" placeholder="Price" min="1" required>
+                        <br><br>Name<br><input type="text" class="annadirOrdenar" name="name" placeholder="Name" required maxlength="50" minlength="3">
+                        <br><br>Price<br><input type="number" step="any" class="annadirOrdenar" name="price" placeholder="Price" min="1" max="1000"required>
                         <br><br>Size<br><input type="number" class="annadirOrdenar" name="size" placeholder="Sizes " min="35" max="51" required>
                         <br><br>Date<br><input type="date" class="annadirOrdenar" name="Date" placeholder="Date"  required><br>   
                         <input type="radio" class="radio" name="Stock" id="Stock" value="true" checked>Stock

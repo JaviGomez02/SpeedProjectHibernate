@@ -27,7 +27,7 @@ if(isSesion != null && userSesion!=null && isSesion.equals("True")){
 	bienvenida=("Sesion: "+userSesion);
 }
 else{
-%><%-- <jsp:forward page="errorPage.html"></jsp:forward> --%><%
+%> <jsp:forward page="errorPage.html"></jsp:forward> <%
 }
 %>
 
@@ -39,8 +39,6 @@ else{
 
 	<nav>
 		<ul>	
-			<li><a href="aboutAs.html">Acerca de</a></li>
-			<li><a href="contactUs.html">Contacto</a></li>	
 			<li><a href="index.jsp">Cerrar sesion</a></li>
 			<li><%
 			out.print(bienvenida);

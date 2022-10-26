@@ -18,16 +18,16 @@
 </head>
 <body>
 <%
-String bienvenida="";
+ String bienvenida="";
 HttpSession sesion=request.getSession();
 String isSesion = (String) sesion.getAttribute("login");
 String userSesion= (String) sesion.getAttribute("usuario");
 if(isSesion != null && userSesion!=null && isSesion.equals("True")){
 	bienvenida=("Sesion: "+userSesion);
 }
-else{
-%><%-- <jsp:forward page="errorPage.html"></jsp:forward> --%><%
-}
+else{ 
+%> <jsp:forward page="errorPage.html"></jsp:forward> <%
+ } 
 %>
 
 <header id="main-header">
@@ -36,12 +36,11 @@ else{
 
 	<nav>
 		<ul>
+			
+			<li><a href="index.jsp">Cerrar sesion</a></li>
 			<li><%
 			out.print(bienvenida);
 			%></li>
-			<li><a href="index.jsp">Cerrar sesion</a></li>
-			<li><a href="aboutAs.html">Acerca de</a></li>
-			<li><a href="contactUs.html">Contacto</a></li>
 		</ul>
 	</nav>
 </header>
@@ -49,8 +48,8 @@ else{
 <div id="cuerpoMain">
 	<form action="main.jsp" method="get">
 		<div id="tablaInfo">
-			<h1><a href="annadirCatalogo.jsp?error=0" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Producto</a></h1>
-			<table id="tabla" border="1">
+			<h1><a href="annadirCatalogo.jsp?error=0" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Catálogo</a></h1>
+			<table class="tabla" border="1">
 				<tr id="titulos">
 					<td class="tdId">
 						<h2>ID</h2>

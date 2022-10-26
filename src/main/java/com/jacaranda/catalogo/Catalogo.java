@@ -3,6 +3,7 @@ package com.jacaranda.catalogo;
 import java.util.Objects;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class Catalogo{
 	private String name;
 	@Column (name="DESCRIPCION")
 	private String description;
-	@OneToMany(mappedBy="idCatalogo")
+	@OneToMany(mappedBy="idCatalogo", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Shoes> shoesList;
 	
 	public Catalogo() {

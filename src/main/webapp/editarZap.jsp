@@ -11,6 +11,18 @@
  <link href="style.css" rel="stylesheet" >
 </head>
 <body>
+<%
+String bienvenida="";
+HttpSession sesion=request.getSession();
+String isSesion = (String) sesion.getAttribute("login");
+String userSesion= (String) sesion.getAttribute("usuario");
+if(isSesion != null && userSesion!=null && isSesion.equals("True")){
+	bienvenida=("Sesion: "+userSesion);
+}
+else{
+%> <jsp:forward page="errorPage.html"></jsp:forward> <%
+}
+%>
 <header id="main-header">
 		
 		<a id="logo-header" href="mainCatalogo.jsp"><img src="final_75x75.png"></a>
@@ -21,6 +33,9 @@
                 
 				<li><a href="mainCatalogo.jsp">Inicio</a></li>
 				<li><a href="index.jsp">Cerrar sesion</a>
+								<li><%
+			out.print(bienvenida);
+			%></li>
 			</ul>
 		</nav>
 
@@ -37,7 +52,7 @@
             <div id="loginEditar">
                     <br>
                     <div id="introducir">
-                        Name<input type="text" class="annadirOrdenar" name="name" value="<%=Zapato.getName() %>"required >
+                        Name<input type="text" class="annadirOrdenar" name="name" value="<%=Zapato.getName() %>"required  minlegth="1" maxlength="">
                     </div><br>
                     
                     <div id ="introducir">

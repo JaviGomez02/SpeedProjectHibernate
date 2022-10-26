@@ -10,16 +10,30 @@
 <link href="style.css" rel="stylesheet" >
 </head>
 <body>
+<%
+String bienvenida="";
+HttpSession sesion=request.getSession();
+String isSesion = (String) sesion.getAttribute("login");
+String userSesion= (String) sesion.getAttribute("usuario");
+if(isSesion != null && userSesion!=null && isSesion.equals("True")){
+	bienvenida=("Sesion: "+userSesion);
+}
+else{
+%> <jsp:forward page="errorPage.html"></jsp:forward> <%
+}
+%>
 <header id="main-header">
 		
-		<a id="logo-header" href="main.jsp"><img src="final_75x75.png"></a>
-		<a id="title" href="main.jsp">SPEED</a>
+		<a id="logo-header" href="mainCatalogo.jsp"><img src="final_75x75.png"></a>
+		<a id="title" href="mainCatalogo.jsp">SPEED</a>
 
 		<nav>
 			<ul>
                 
-				<li><a href="main.jsp">Inicio</a></li>
 				<li><a href="index.jsp">Cerrar sesion</a>
+				<li><%
+			out.print(bienvenida);
+			%></li>
 			</ul>
 		</nav>
 

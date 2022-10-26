@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
+
 <title>Login</title>
 <link href="style.css" rel="stylesheet"> 
 </head>
@@ -30,10 +33,10 @@
             <div id="login">
                     <br>
                     <div id ="introducir">
-                        <input type="text" class="usuario" id="usuario" name="usuario" placeholder="User" >
+                        <input type="text" class="usuario" id="usuario" name="usuario" placeholder="User" maxlength="50" minlength="1">
                     </div>
                     <div id="introducir">
-                        <input type="password" class="password" id="password" name="password" placeholder="Password" required>
+                        <input type="password" class="password" id="password" name="password" placeholder="Password" required maxlength="50" minlength="1">
                     </div>
                     <div id ="introducir">
                         <button type="submit" class="join"><h2>Log In</h2></button>
@@ -45,7 +48,9 @@
                     
             </div>
        
-   		</form>
+   		</form> 
+   		
+   		
    		<footer>
 	   		<div id="pie">
 	            <ul class="listaIdiomas">
