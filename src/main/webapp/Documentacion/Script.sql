@@ -1,5 +1,3 @@
-
-
 CREATE TABLE USUARIO(
 USERNAME VARCHAR(50),
 PASSWORDD VARCHAR(50),
@@ -7,7 +5,8 @@ CONSTRAINT PK_USUARIO PRIMARY KEY(USERNAME)
 );
 
 
-CREATE TABLE CATALOGO(
+CREATE TABLE CATALOG
+O(
 ID_CATALOGO NUMERIC(5),
 NOMBRE VARCHAR(50),
 DESCRIPCION VARCHAR(150),
@@ -136,3 +135,36 @@ insert into ZAPATILLA (ID, NAME, PRICE, SIZES, RELEASEDATE, STOCK, IDCATALOGO_ZA
 SELECT * FROM ZAPATILLA z, CATALOGO c WHERE c.ID_CATALOGO=1 AND c.ID_CATALOGO=z.IDCATALOGO_ZAP;
 
 SELECT * FROM CATALOGO;
+
+insert into USUARIO (USERNAME, PASSWORDD) values ('ckhalid0', 'TC6jvg0');
+insert into USUARIO (USERNAME, PASSWORDD) values ('ghighman1', '7PRILk5DMU3');
+insert into USUARIO (USERNAME, PASSWORDD) values ('drizon2', 'RPpjmaUKd9');
+insert into USUARIO (USERNAME, PASSWORDD) values ('rveelers3', '1kq248Xf');
+insert into USUARIO (USERNAME, PASSWORDD) values ('nsambells4', '3kZL9V');
+insert into USUARIO (USERNAME, PASSWORDD) values ('rvinker5', 'eMC5orZQ');
+insert into USUARIO (USERNAME, PASSWORDD) values ('alamond6', 'PW0UUYmMwQB0');
+insert into USUARIO (USERNAME, PASSWORDD) values ('bpepperrall7', 'KrY771UuB');
+insert into USUARIO (USERNAME, PASSWORDD) values ('dpacheco8', 'R19rqZniLcs');
+insert into USUARIO (USERNAME, PASSWORDD) values ('lducarel9', 'jNtW00HYqm6');
+insert into USUARIO (USERNAME, PASSWORDD) values ('mkulica', 'tD3LZFWPrY');
+insert into USUARIO (USERNAME, PASSWORDD) values ('pgammieb', 'GUNshm');
+insert into USUARIO (USERNAME, PASSWORDD) values ('vsnassellc', 'RJbv1o5RANMn');
+insert into USUARIO (USERNAME, PASSWORDD) values ('jbellinod', 'H9FMvO');
+insert into USUARIO (USERNAME, PASSWORDD) values ('pioannoue', '37lKVVU5');
+insert into USUARIO (USERNAME, PASSWORDD) values ('fpaddief', 'E5elo1PL');
+insert into USUARIO (USERNAME, PASSWORDD) values ('schallicombeg', 'hyLs1H');
+insert into USUARIO (USERNAME, PASSWORDD) values ('akinzetth', '13jsro2G0');
+insert into USUARIO (USERNAME, PASSWORDD) values ('wcockertoni', 'HEjmhxq');
+insert into USUARIO (USERNAME, PASSWORDD) values ('cjillionsj', 'l0k3nYFrmMz');
+insert into USUARIO (USERNAME, PASSWORDD) values ('mamnerk', 'KgLQ8392GA');
+insert into USUARIO (USERNAME, PASSWORDD) values ('sabellsl', 'DJFvjlg6Og');
+insert into USUARIO (USERNAME, PASSWORDD) values ('ajersonm', 'wXuR42');
+insert into USUARIO (USERNAME, PASSWORDD) values ('hfrizzelln', 'i1gmqwVinhpd');
+insert into USUARIO (USERNAME, PASSWORDD) values ('cchesnuto', '4hBIqDSLM');
+insert into USUARIO (USERNAME, PASSWORDD) values ('inma', 'inma');
+
+SELECT * FROM USUARIO;
+
+SELECT * FROM CATALOGO c;
+
+select * from ZAPATILLA z;
