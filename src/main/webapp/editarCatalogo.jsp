@@ -47,7 +47,7 @@ else{
         <div id="cuerpo">
 
 
-            <div id="loginEditar">
+            <div id="loginEditarCatalogo">
                     <br>
                     <div id="introducir">
                         Name: <input type="text" class="annadirOrdenar" name="name" value="<%=Catalogo.getName() %>"required minlength="1" maxlength="50">

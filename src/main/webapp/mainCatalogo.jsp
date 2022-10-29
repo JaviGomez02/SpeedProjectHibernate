@@ -48,7 +48,7 @@ else{
 <div id="cuerpoMain">
 	<form action="main.jsp" method="get">
 		<div id="tablaInfo">
-			<h1><a href="annadirCatalogo.jsp?error=0" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Catálogo</a></h1>
+			<h1><a href="annadirCatalogo.jsp?error=0" name="annadir" class="annadirBoton" style=" float:left; margin-left: 1em; margin-bottom: 1em; margin-top: 0.35em; ">+ Añadir Catálogo</a></h1><br><br><br><br>
 			<table class="tabla" border="1">
 				<tr id="titulos">
 					<td class="tdId">
@@ -57,7 +57,7 @@ else{
 					<td class="tdName">
 						<h2>NAME</h2>
 					</td>
-					<td class="tdPrice">
+					<td class="tdDescription">
 						<h2>DESCRIPTION</h2>
 					</td>
 					<td id="buttonIcon">
@@ -83,7 +83,7 @@ else{
 							<%=ca.getDescription() %>
 						</td>
 						<td>
-							<a href="main.jsp?idCatalogo=<%=ca.getId()%>"><input type="button" value="ir"></a>
+							<a href="main.jsp?idCatalogo=<%=ca.getId()%>"><img src="entrar.png" width = "26" height = "26"></a>
 						</td>
 						<td>
 							<a href="borrarCatalogo.jsp?idCatalogo=<%=ca.getId()%>"><img src="https://cdn-icons-png.flaticon.com/512/4315/4315482.png" width = "26" height = "26"></a>

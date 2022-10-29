@@ -100,6 +100,7 @@ hr{
 	background: #333;
 	color: white;
 	height: 80px;
+	width: 100%;
 }	
 
 #main-header a {
@@ -216,6 +217,10 @@ size: 0.2em;
 	width: 8em;
 }
 
+.tdDescription{
+	width: 25em;
+}
+
 .tdSize{
 	width: 8em;
 }
@@ -229,13 +234,12 @@ size: 0.2em;
 }
 
 .tdName{
-	width: 20em;
+	width: 10em;
 }
 
 
 .tabla{
-	width:98.5%;
-	width:50%;
+	width:95%;
 	height: 15em;
 	border-collapse: collapse;
 	background-color: rgb(255, 255, 255);
@@ -244,8 +248,7 @@ size: 0.2em;
 	border: 1px solid black;
 	border-radius: 5px;
 	box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%); 
-	table-layout: fixed
-	
+	table-layout: fixed;
 	
 } 
 
@@ -366,7 +369,17 @@ input{
 	background-color: rgb(255, 255, 255) ;
     margin: 0 auto;
     width: 24.95em; 
-    height: 42.5em;
+    height: 45em;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%); 
+    border-radius: 8px;
+    text-align: center;
+}
+
+#loginAnnadirCatalogo{
+	background-color: rgb(255, 255, 255) ;
+    margin: 0 auto;
+    width: 24.95em; 
+    height: 32em;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%); 
     border-radius: 8px;
     text-align: center;
@@ -400,7 +413,17 @@ input{
 	background-color: rgb(255, 255, 255) ;
     margin: 0 auto;
     width: 24.95em; 
-    height: 30em;
+    height: 41em;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%); 
+    border-radius: 8px;
+    text-align: center;
+}
+
+#loginEditarCatalogo{
+	background-color: rgb(255, 255, 255) ;
+    margin: 0 auto;
+    width: 24.95em; 
+    height: 25em;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%); 
     border-radius: 8px;
     text-align: center;
@@ -423,7 +446,7 @@ input{
 	background-color: rgb(255, 255, 255) ;
     margin: 0 auto;
     width: 24.95em; 
-    height: 19.5em;
+    height: 22em;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%); 
     border-radius: 8px;
     text-align: center;

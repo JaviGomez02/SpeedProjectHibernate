@@ -44,7 +44,7 @@ else{
     <form action="annadirCatalogoExec.jsp" method="get">
         <div id="cuerpoAnnadir">
 
-            <div id="loginAnnadir">
+            <div id="loginAnnadirCatalogo">
                     <br>
                     	<%int error=Integer.parseInt(request.getParameter("error")); %>
                     	ID<br> <input type="number" class="annadirOrdenar" name="Id" placeholder="Id" required max="99999"><br><br>

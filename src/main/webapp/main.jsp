@@ -82,9 +82,14 @@ Set<Shoes>listaZapatos=Catalogo.getShoesList();
 					</td>
 				</tr>
 				<%
-					
+					String stockValor;
 					for(Shoes s:listaZapatos){
-						
+						if (s.isStock()==true){
+							stockValor="En stock";
+						}
+						else{
+							stockValor="No hay stock";
+						}
 					
 				%> 
 					<tr>
@@ -105,7 +110,7 @@ Set<Shoes>listaZapatos=Catalogo.getShoesList();
 							<%=s.getReleaseDate() %>
 						</td>
 						<td>
-							<%=s.isStock() %>
+							<%=stockValor %>
 						</td>
 						<td>
 							<a href="editarZap.jsp?idZap=<%=s.getIdShoes()%>"><img src="https://cdn-icons-png.flaticon.com/512/3817/3817309.png" width = "28" height = "28"></a>
